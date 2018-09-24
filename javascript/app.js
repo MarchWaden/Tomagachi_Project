@@ -4,20 +4,25 @@ class Tomagachi{
     this.hunger = 0;
     this.sleepiness = 0;
     this.boredom = 0;
+    this.age = 0;
   }
 }
 let interval;
 let tiger;
 const tick_loop = () => {
+  tiger.age++;
   $('.name').html(`<h5 class="name">${tiger.name}</h5>`);
   $('.stats').html(`<p class="stats">
   Hunger: ${tiger.hunger}
   Boredom: ${tiger.boredom}
   Sleepiness: ${tiger.sleepiness}
   </p>`)
+  if(tiger.age > 10){
+      $('.pet').parent().html('<image class="pet" src="images/adult_tiger.jpg">');
+  }
   if(tiger.hunger >= 10 || tiger.sleepiness >= 10 || tiger.boredom >= 10){
     console.log('Your tiger has died!');
-    $('.pet').parent().html('');
+    $('.pet').parent().html('<image class="pet" src="images/dead_tiger.jpg">');
     clearInterval(interval);
   }
   if (Math.random() < .2){
@@ -29,7 +34,6 @@ const tick_loop = () => {
   if (Math.random() < .8){
     tiger.boredom++;
   }
-  console.log('tick')
 }
 const play = () => {
   tiger = new Tomagachi("Tiger");
