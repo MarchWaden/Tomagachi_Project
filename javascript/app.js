@@ -16,6 +16,7 @@ const tick_loop = () => {
   Hunger: ${tiger.hunger}
   Boredom: ${tiger.boredom}
   Sleepiness: ${tiger.sleepiness}
+  Age: ${tiger.age}
   </p>`)
   if(tiger.age > 10){
       $('.pet').parent().html('<image class="pet" src="images/adult_tiger.jpg">');
