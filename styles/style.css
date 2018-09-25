@@ -1,3 +1,15 @@
 .pet {
   height: 200px;
 }
+body {
+  font-family: 'Indie Flower', cursive;
+}
+p {
+  font-size: 16;
+}
+button {
+  font-family: 'Indie Flower', cursive;
+  font-size: 16
+}
+.tiger_enclosure {
+}
